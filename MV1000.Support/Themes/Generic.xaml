@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/MV1000Window.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/MinimizeButton.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/MaximizeButton.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/CloseButton.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/PadButton.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/MagicBar.xaml" />
+        <ResourceDictionary Source="/MV1000.Support;component/Themes/Units/MenuIconButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

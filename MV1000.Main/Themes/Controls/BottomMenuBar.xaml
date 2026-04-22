@@ -1,0 +1,118 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MV1000.Main.UI.Controls"
+    xmlns:support="clr-namespace:MV1000.Support.UI.Units;assembly=MV1000.Support">
+
+    <Style TargetType="{x:Type controls:BottomMenuBar}">
+        <Setter Property="Background" Value="#15558A" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:BottomMenuBar}">
+                    <Border Margin="10,5,10,7" Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  왼쪽: 메뉴 버튼들  -->
+                            <StackPanel
+                                Grid.Column="0"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <support:MenuIconButton
+                                    x:Name="PART_ButtonHistory"
+                                    Title="{TemplateBinding HistoryText}"
+                                    Width="95"
+                                    Height="70"
+                                    Command="{TemplateBinding OpenHistoryCommand}"
+                                    OffImageSource="{TemplateBinding HistoryOffImage}"
+                                    OnImageSource="{TemplateBinding HistoryOnImage}" />
+                                <support:MenuIconButton
+                                    x:Name="PART_ButtonMonitoring"
+                                    Title="{TemplateBinding MonitoringText}"
+                                    Width="95"
+                                    Height="70"
+                                    Margin="6,0,0,0"
+                                    Command="{TemplateBinding OpenMonitoringCommand}"
+                                    OffImageSource="{TemplateBinding MonitoringOffImage}"
+                                    OnImageSource="{TemplateBinding MonitoringOnImage}" />
+                                <support:MenuIconButton
+                                    x:Name="PART_ButtonTool"
+                                    Title="{TemplateBinding ToolText}"
+                                    Width="95"
+                                    Height="70"
+                                    Margin="6,0,0,0"
+                                    Command="{TemplateBinding OpenToolCommand}"
+                                    OffImageSource="{TemplateBinding ToolOffImage}"
+                                    OnImageSource="{TemplateBinding ToolOnImage}"
+                                    Visibility="Collapsed" />
+                                <support:MenuIconButton
+                                    x:Name="PART_ButtonSystem"
+                                    Title="{TemplateBinding SystemText}"
+                                    Width="95"
+                                    Height="70"
+                                    Margin="6,0,0,0"
+                                    Command="{TemplateBinding OpenSystemCommand}"
+                                    OffImageSource="{TemplateBinding SystemOffImage}"
+                                    OnImageSource="{TemplateBinding SystemOnImage}" />
+                            </StackPanel>
+
+                            <!--  오른쪽: 상태 정보 버튼  -->
+                            <Button
+                                Grid.Column="1"
+                                Height="70"
+                                Margin="6,0,0,0"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Command="{TemplateBinding ShowStateInfoCommand}"
+                                Cursor="Hand"
+                                FocusVisualStyle="{x:Null}">
+                                <Grid>
+                                    <StackPanel
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                        <Image
+                                            Width="36"
+                                            Height="36"
+                                            Margin="0,0,8,0"
+                                            VerticalAlignment="Center"
+                                            Source="{TemplateBinding StateInfoImage}" />
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="맑은 고딕"
+                                            FontSize="18"
+                                            FontWeight="Bold"
+                                            Foreground="#15558A"
+                                            Text="{TemplateBinding StateInfoText}" />
+                                    </StackPanel>
+                                    <!--  날짜/시간 + 디버그  -->
+                                    <StackPanel
+                                        Margin="0,0,4,2"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom">
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            FontFamily="맑은 고딕"
+                                            FontSize="11"
+                                            Foreground="Gray"
+                                            Text="{TemplateBinding DebugText}" />
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            FontFamily="맑은 고딕"
+                                            FontSize="11"
+                                            FontWeight="Bold"
+                                            Foreground="Gray"
+                                            Text="{TemplateBinding DateTimeText}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
