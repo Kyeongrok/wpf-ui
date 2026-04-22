@@ -26,37 +26,99 @@
                                     Title="{TemplateBinding HistoryText}"
                                     Width="95"
                                     Height="70"
-                                    Command="{TemplateBinding OpenHistoryCommand}"
-                                    OffImageSource="{TemplateBinding HistoryOffImage}"
-                                    OnImageSource="{TemplateBinding HistoryOnImage}" />
+                                    Command="{TemplateBinding OpenHistoryCommand}">
+                                    <Canvas Width="100" Height="100">
+                                        <Path Data="M 5,8 L 12,2 L 88,2 L 88,98 L 82,100 L 5,100 Z" Fill="#444444" />
+                                        <Path Data="M 12,2 L 88,2 L 88,98 L 12,98 Z" Fill="#E8E8E8" />
+                                        <Path Data="M 14,16 H 22 V 23 H 14 Z" Fill="#777777" />
+                                        <Path Data="M 24,16 H 82 V 23 H 24 Z" Fill="#111111" />
+                                        <Path Data="M 14,29 H 22 V 36 H 14 Z" Fill="#777777" />
+                                        <Path Data="M 24,29 H 82 V 36 H 24 Z" Fill="#111111" />
+                                        <Path Data="M 14,42 H 22 V 49 H 14 Z" Fill="#777777" />
+                                        <Path Data="M 24,42 H 82 V 49 H 24 Z" Fill="#111111" />
+                                        <Path Data="M 14,55 H 22 V 62 H 14 Z" Fill="#777777" />
+                                        <Path Data="M 24,55 H 55 V 62 H 24 Z" Fill="#111111" />
+                                        <Path Data="M 14,68 H 22 V 75 H 14 Z" Fill="#777777" />
+                                        <Path Data="M 24,68 H 55 V 75 H 24 Z" Fill="#111111" />
+                                        <Path Data="M 57,52 H 88 V 98 H 57 Z" Fill="#7B96C8" />
+                                        <Path Data="M 57,52 L 88,52 L 57,98 Z" Fill="#1C3A7A" />
+                                    </Canvas>
+                                </support:MenuIconButton>
                                 <support:MenuIconButton
                                     x:Name="PART_ButtonMonitoring"
                                     Title="{TemplateBinding MonitoringText}"
                                     Width="95"
                                     Height="70"
                                     Margin="6,0,0,0"
-                                    Command="{TemplateBinding OpenMonitoringCommand}"
-                                    OffImageSource="{TemplateBinding MonitoringOffImage}"
-                                    OnImageSource="{TemplateBinding MonitoringOnImage}" />
+                                    Command="{TemplateBinding OpenMonitoringCommand}">
+                                    <Canvas Width="100" Height="100">
+                                        <!--  Monitor outer frame  -->
+                                        <Path Data="M 3,3 H 97 V 73 H 3 Z" Fill="#222222" />
+                                        <!--  Screen  -->
+                                        <Path Data="M 10,9 H 90 V 67 H 10 Z" Fill="#E8E8E8" />
+                                        <!--  Chart line (filled polygon)  -->
+                                        <Path Data="M 10,56 L 10,50 L 20,50 L 28,24 L 34,44 L 40,14 L 46,44 L 51,32 L 58,50 L 90,50 L 90,56 Z" Fill="#111111" />
+                                        <!--  Blue bar  -->
+                                        <Path Data="M 10,56 H 90 V 67 H 10 Z" Fill="#2255BB" />
+                                        <!--  Stand neck  -->
+                                        <Path Data="M 43,73 H 57 V 82 H 43 Z" Fill="#222222" />
+                                        <!--  Base  -->
+                                        <Path Data="M 28,82 H 72 V 90 H 28 Z" Fill="#222222" />
+                                    </Canvas>
+                                </support:MenuIconButton>
                                 <support:MenuIconButton
                                     x:Name="PART_ButtonTool"
                                     Title="{TemplateBinding ToolText}"
                                     Width="95"
                                     Height="70"
                                     Margin="6,0,0,0"
-                                    Command="{TemplateBinding OpenToolCommand}"
-                                    OffImageSource="{TemplateBinding ToolOffImage}"
-                                    OnImageSource="{TemplateBinding ToolOnImage}"
-                                    Visibility="Collapsed" />
+                                    Command="{TemplateBinding OpenToolCommand}">
+                                    <Canvas Width="100" Height="100">
+                                        <!--  Top mounting plate  -->
+                                        <Path Data="M 5,3 H 95 V 16 H 5 Z" Fill="#222222" />
+                                        <!--  Stem (narrow connector)  -->
+                                        <Path Data="M 40,16 H 60 V 30 H 40 Z" Fill="#333333" />
+                                        <!--  Punch head (ram) - blue  -->
+                                        <Path Data="M 22,30 H 78 V 48 H 22 Z" Fill="#2255BB" />
+                                        <!--  Die block with slot opening (EvenOdd)  -->
+                                        <Path Data="F1 M 12,56 H 88 V 82 H 12 Z M 32,56 H 68 V 70 H 32 Z" Fill="#333333" />
+                                        <!--  Base plate  -->
+                                        <Path Data="M 5,82 H 95 V 94 H 5 Z" Fill="#222222" />
+                                    </Canvas>
+                                </support:MenuIconButton>
                                 <support:MenuIconButton
                                     x:Name="PART_ButtonSystem"
                                     Title="{TemplateBinding SystemText}"
                                     Width="95"
                                     Height="70"
                                     Margin="6,0,0,0"
-                                    Command="{TemplateBinding OpenSystemCommand}"
-                                    OffImageSource="{TemplateBinding SystemOffImage}"
-                                    OnImageSource="{TemplateBinding SystemOnImage}" />
+                                    Command="{TemplateBinding OpenSystemCommand}">
+                                    <Canvas Width="100" Height="100">
+                                        <!--  Gear (8 teeth, transparent fill)  -->
+                                        <Path
+                                            Data="M 97,41 L 97,59 L 81,56 L 77,68 L 90,77 L 77,90 L 68,77 L 56,81 L 59,97 L 41,97 L 44,81 L 32,77 L 23,90 L 10,77 L 23,68 L 19,56 L 3,59 L 3,41 L 19,44 L 23,32 L 10,23 L 23,10 L 32,23 L 44,19 L 41,3 L 59,3 L 56,19 L 68,23 L 77,10 L 90,23 L 77,32 L 81,44 Z"
+                                            Fill="Transparent"
+                                            Stroke="#2A2A2A"
+                                            StrokeLineJoin="Round"
+                                            StrokeThickness="4" />
+                                        <!--  White background (gear hole)  -->
+                                        <Ellipse
+                                            Canvas.Left="30"
+                                            Canvas.Top="30"
+                                            Width="40"
+                                            Height="40"
+                                            Fill="White" />
+                                        <!--  Blue circle with black border  -->
+                                        <Ellipse
+                                            Canvas.Left="35"
+                                            Canvas.Top="35"
+                                            Width="30"
+                                            Height="30"
+                                            Fill="#0055CC"
+                                            Stroke="Black"
+                                            StrokeThickness="3" />
+                                    </Canvas>
+                                </support:MenuIconButton>
                             </StackPanel>
 
                             <!--  오른쪽: 상태 정보 버튼  -->

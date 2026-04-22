@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:units="clr-namespace:MV1000.Support.UI.Units">
+    xmlns:units="clr-namespace:MV1000.Support.UI.Units" xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av">
 
     <Style TargetType="{x:Type units:MenuIconButton}">
         <Setter Property="Width" Value="95" />
@@ -22,7 +22,7 @@
                         <Border.BorderBrush>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                 <GradientStop Offset="0" Color="#8899BB" />
-                                <GradientStop Offset="1" Color="#1A2A4A" />
+                                <GradientStop Offset="1" Color="#FF85A2DB" />
                             </LinearGradientBrush>
                         </Border.BorderBrush>
 
@@ -34,7 +34,7 @@
                             <Border.BorderBrush>
                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                     <GradientStop Offset="0" Color="#E0ECF8" />
-                                    <GradientStop Offset="1" Color="#607090" />
+                                    <GradientStop Offset="1" Color="#FFFFFF" />
                                 </LinearGradientBrush>
                             </Border.BorderBrush>
 
@@ -52,7 +52,7 @@
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                             <GradientStop Offset="0" Color="#D8E4EE" />
-                                            <GradientStop Offset="1" Color="#98AABB" />
+                                            <GradientStop Offset="1" Color="#FF849AAF" />
                                         </LinearGradientBrush>
                                     </Border.Background>
                                     <Grid>
@@ -70,22 +70,7 @@
                                             </Border.Background>
                                         </Border>
                                         <Viewbox Margin="6">
-                                            <Canvas Width="100" Height="100">
-                                                <Path Data="M 5,8 L 12,2 L 88,2 L 88,98 L 82,100 L 5,100 Z" Fill="#444444" />
-                                                <Path Data="M 12,2 L 88,2 L 88,98 L 12,98 Z" Fill="#E8E8E8" />
-                                                <Path Data="M 14,16 H 22 V 23 H 14 Z" Fill="#777777" />
-                                                <Path Data="M 24,16 H 82 V 23 H 24 Z" Fill="#111111" />
-                                                <Path Data="M 14,29 H 22 V 36 H 14 Z" Fill="#777777" />
-                                                <Path Data="M 24,29 H 82 V 36 H 24 Z" Fill="#111111" />
-                                                <Path Data="M 14,42 H 22 V 49 H 14 Z" Fill="#777777" />
-                                                <Path Data="M 24,42 H 82 V 49 H 24 Z" Fill="#111111" />
-                                                <Path Data="M 14,55 H 22 V 62 H 14 Z" Fill="#777777" />
-                                                <Path Data="M 24,55 H 55 V 62 H 24 Z" Fill="#111111" />
-                                                <Path Data="M 14,68 H 22 V 75 H 14 Z" Fill="#777777" />
-                                                <Path Data="M 24,68 H 55 V 75 H 24 Z" Fill="#111111" />
-                                                <Path Data="M 57,52 H 88 V 98 H 57 Z" Fill="#7B96C8" />
-                                                <Path Data="M 57,52 L 88,52 L 57,98 Z" Fill="#1C3A7A" />
-                                            </Canvas>
+                                            <ContentPresenter Width="100" Height="100" />
                                         </Viewbox>
                                     </Grid>
                                 </Border>

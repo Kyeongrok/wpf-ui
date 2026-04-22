@@ -27,7 +27,7 @@ public class BottomMenuBar : Control
 
     public static readonly DependencyProperty IsToolVisibleProperty =
         DependencyProperty.Register(nameof(IsToolVisible), typeof(bool), typeof(BottomMenuBar),
-            new PropertyMetadata(false, (d, e) => ((BottomMenuBar)d).UpdateToolVisibility((bool)e.NewValue)));
+            new PropertyMetadata(true, (d, e) => ((BottomMenuBar)d).UpdateToolVisibility((bool)e.NewValue)));
 
     // ── 상태 정보 영역 ────────────────────────────────────────────────────
     public static readonly DependencyProperty StateInfoImageProperty =
