@@ -7,16 +7,16 @@
         M0,0 L100,0 C95.167503,0 91.135628,3.4278221 90.203163,7.9846497 L90.152122,8.2704506 89.963921,9.1416779 C85.813438,27.384438 69.496498,41 50,41 30.503502,41 14.186564,27.384438 10.036079,9.1416779 L9.8478823,8.2704926 9.7968359,7.9846497 C8.8643732,3.4278221 4.8324914,0 0,0 z
     </Geometry>
 
-    <Style x:Key="Arc" TargetType="{x:Type Path}">
+    <Style TargetType="{x:Type Path}" x:Key="Arc">
         <Setter Property="Data" Value="{StaticResource ArcData}" />
         <Setter Property="Width" Value="100" />
         <Setter Property="Height" Value="100" />
         <Setter Property="Fill" Value="#222222" />
-        <Setter Property="Margin" Value="-10,40,-10,-1" />
+        <Setter Property="Margin" Value="-10 40 -10 -1" />
     </Style>
 
     <Style x:Key="Bar" TargetType="{x:Type Border}">
-        <Setter Property="Background" Value="Silver" />
+        <Setter Property="Background" Value="#00070E" />
         <Setter Property="Margin" Value="0,40,0,0" />
         <Setter Property="CornerRadius" Value="6" />
     </Style>
@@ -36,11 +36,11 @@
                 <ControlTemplate TargetType="{x:Type units:MagicBar}">
                     <Grid Background="{TemplateBinding Background}">
                         <Border Style="{StaticResource Bar}" />
-                        <Canvas Margin="20,0,20,0">
+                        <Canvas Margin="20 0 20 0">
                             <Grid Style="{StaticResource Circle}">
                                 <Path Style="{StaticResource Arc}" />
                                 <Ellipse Fill="#222222" />
-                                <Ellipse Margin="6" Fill="CadetBlue" />
+                                <Ellipse Fill="CadetBlue" Margin="6"/>
                             </Grid>
                         </Canvas>
                     </Grid>

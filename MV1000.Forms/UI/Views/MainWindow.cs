@@ -1,5 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 using MV1000.Forms.ViewModels;
 using MV1000.Support.UI.Units;
 
@@ -16,6 +18,46 @@ public class MainWindow : MV1000Window
     public MainWindow(MainWindowViewModel viewModel)
     {
         DataContext = viewModel;
+    }
+
+    public static readonly DependencyProperty HistoryTextProperty =
+        DependencyProperty.Register(nameof(HistoryText), typeof(string), typeof(MainWindow),
+            new PropertyMetadata(string.Empty));
+
+    public static readonly DependencyProperty OpenHistoryCommandProperty =
+        DependencyProperty.Register(nameof(OpenHistoryCommand), typeof(ICommand), typeof(MainWindow),
+            new PropertyMetadata(null));
+
+    public static readonly DependencyProperty HistoryOffImageProperty =
+        DependencyProperty.Register(nameof(HistoryOffImage), typeof(ImageSource), typeof(MainWindow),
+            new PropertyMetadata(null));
+
+    public static readonly DependencyProperty HistoryOnImageProperty =
+        DependencyProperty.Register(nameof(HistoryOnImage), typeof(ImageSource), typeof(MainWindow),
+            new PropertyMetadata(null));
+
+    public string HistoryText
+    {
+        get => (string)GetValue(HistoryTextProperty);
+        set => SetValue(HistoryTextProperty, value);
+    }
+
+    public ICommand? OpenHistoryCommand
+    {
+        get => (ICommand?)GetValue(OpenHistoryCommandProperty);
+        set => SetValue(OpenHistoryCommandProperty, value);
+    }
+
+    public ImageSource? HistoryOffImage
+    {
+        get => (ImageSource?)GetValue(HistoryOffImageProperty);
+        set => SetValue(HistoryOffImageProperty, value);
+    }
+
+    public ImageSource? HistoryOnImage
+    {
+        get => (ImageSource?)GetValue(HistoryOnImageProperty);
+        set => SetValue(HistoryOnImageProperty, value);
     }
 
     public override void OnApplyTemplate()

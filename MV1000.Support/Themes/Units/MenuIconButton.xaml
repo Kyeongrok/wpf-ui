@@ -4,36 +4,133 @@
     xmlns:units="clr-namespace:MV1000.Support.UI.Units">
 
     <Style TargetType="{x:Type units:MenuIconButton}">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="95" />
+        <Setter Property="Height" Value="70" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontFamily" Value="맑은 고딕" />
-        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontSize" Value="12" />
         <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:MenuIconButton}">
+                    <!--  Outer shadow border (bottom-right dark)  -->
                     <Border
-                        x:Name="border"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image
-                                x:Name="PART_Image"
-                                Width="40"
-                                Height="35" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                Foreground="{TemplateBinding Foreground}"
-                                Text="{TemplateBinding Title}" />
-                        </StackPanel>
+                        x:Name="OuterBorder"
+                        BorderThickness="1,1,2,2"
+                        CornerRadius="4">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Offset="0" Color="#8899BB" />
+                                <GradientStop Offset="1" Color="#1A2A4A" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+
+                        <!--  Inner highlight border (top-left bright)  -->
+                        <Border
+                            x:Name="InnerBorder"
+                            BorderThickness="1,1,0,0"
+                            CornerRadius="3">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Offset="0" Color="#E0ECF8" />
+                                    <GradientStop Offset="1" Color="#607090" />
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="22" />
+                                </Grid.RowDefinitions>
+
+                                <!--  Icon area with gradient  -->
+                                <Border
+                                    x:Name="IconBorder"
+                                    Grid.Row="0"
+                                    CornerRadius="2,2,0,0">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="#D8E4EE" />
+                                            <GradientStop Offset="1" Color="#98AABB" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Grid>
+                                        <!--  Top highlight shine  -->
+                                        <Border
+                                            Height="6"
+                                            VerticalAlignment="Top"
+                                            CornerRadius="2,2,0,0"
+                                            Opacity="0.4">
+                                            <Border.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                    <GradientStop Offset="0" Color="White" />
+                                                    <GradientStop Offset="1" Color="Transparent" />
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                        </Border>
+                                        <Viewbox Margin="6">
+                                            <Canvas Width="100" Height="100">
+                                                <Path Data="M 5,8 L 12,2 L 88,2 L 88,98 L 82,100 L 5,100 Z" Fill="#444444" />
+                                                <Path Data="M 12,2 L 88,2 L 88,98 L 12,98 Z" Fill="#E8E8E8" />
+                                                <Path Data="M 14,16 H 22 V 23 H 14 Z" Fill="#777777" />
+                                                <Path Data="M 24,16 H 82 V 23 H 24 Z" Fill="#111111" />
+                                                <Path Data="M 14,29 H 22 V 36 H 14 Z" Fill="#777777" />
+                                                <Path Data="M 24,29 H 82 V 36 H 24 Z" Fill="#111111" />
+                                                <Path Data="M 14,42 H 22 V 49 H 14 Z" Fill="#777777" />
+                                                <Path Data="M 24,42 H 82 V 49 H 24 Z" Fill="#111111" />
+                                                <Path Data="M 14,55 H 22 V 62 H 14 Z" Fill="#777777" />
+                                                <Path Data="M 24,55 H 55 V 62 H 24 Z" Fill="#111111" />
+                                                <Path Data="M 14,68 H 22 V 75 H 14 Z" Fill="#777777" />
+                                                <Path Data="M 24,68 H 55 V 75 H 24 Z" Fill="#111111" />
+                                                <Path Data="M 57,52 H 88 V 98 H 57 Z" Fill="#7B96C8" />
+                                                <Path Data="M 57,52 L 88,52 L 57,98 Z" Fill="#1C3A7A" />
+                                            </Canvas>
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <!--  Label area  -->
+                                <Border Grid.Row="1" CornerRadius="0,0,2,2">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="#4A5E72" />
+                                            <GradientStop Offset="1" Color="#2E3E50" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        FontWeight="{TemplateBinding FontWeight}"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        Text="{TemplateBinding Title}" />
+                                </Border>
+                            </Grid>
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="IconBorder" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="#E8F2FF" />
+                                        <GradientStop Offset="1" Color="#AABDD0" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Opacity" Value="0.75" />
+                            <Setter TargetName="IconBorder" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="#8899AA" />
+                                        <GradientStop Offset="1" Color="#C8D8E8" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="OuterBorder" Property="BorderThickness" Value="2,2,1,1" />
+                            <Setter TargetName="InnerBorder" Property="BorderThickness" Value="0,0,1,1" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -33,6 +33,11 @@ public class App : Application
         mainWindow.Top = 0;
         mainWindow.Width = 800;
         mainWindow.Height = 600;
+        mainWindow.HistoryText = "History";
+        mainWindow.HistoryOffImage = new System.Windows.Media.Imaging.BitmapImage(
+            new Uri("pack://application:,,,/MV1000.Support;component/Resources/HISTORY_BACK_OFF.png"));
+        mainWindow.HistoryOnImage = new System.Windows.Media.Imaging.BitmapImage(
+            new Uri("pack://application:,,,/MV1000.Support;component/Resources/HISTORY_BACK_ON.png"));
         mainWindow.Show();
     }
 

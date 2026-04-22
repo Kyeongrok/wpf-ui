@@ -13,4 +13,9 @@ public partial class MagicBarPreview : UserControl
     {
 
     }
+
+    private void MenuIconButton_Click(object sender, System.Windows.RoutedEventArgs e)
+    {
+
+    }
 }
